@@ -5,6 +5,21 @@
 Meteo One is a modern, mobile-first weather application built with plain **HTML/CSS/JS**.  
 It fetches current conditions and an hourly forecast from **WeatherAPI.com**, visualizes data with **Chart.js**, and offers a clean UX focused on the essentials: location, current temperature, min/max, feels-like, UV, astronomy and air quality.
 
+## Screenshots
+
+### Desktop
+
+<p align="center">
+  <img src="public/screenshot-desktop.png" alt="Meteo One — desktop" width="1000">
+</p>
+
+### Mobile
+
+<p align="center">
+  <img src="public/screenshot-mobile-hero.png" alt="Meteo One — mobile hero" width="360">
+  <img src="public/screenshot-mobile-charts.png" alt="Meteo One — mobile charts" width="360">
+</p>
+
 ## Features
 
 - City search (e.g., "London") or coordinates (e.g., "51.5,-0.1").
