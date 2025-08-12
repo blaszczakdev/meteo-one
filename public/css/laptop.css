@@ -1,0 +1,7 @@
+:root {
+  --canvas-h: 380px;
+}
+
+.hero__metrics {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}

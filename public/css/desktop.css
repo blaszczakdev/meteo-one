@@ -1,0 +1,7 @@
+:root {
+  --canvas-h: 420px;
+}
+
+#weatherCity {
+  font-size: clamp(2.4rem, 2.6vw, 3rem);
+}

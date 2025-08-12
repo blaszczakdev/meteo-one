@@ -1,0 +1,45 @@
+:root {
+  --font: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, Inter, 'Noto Sans';
+
+  --fs-sm: 0.95rem;
+  --fs-md: 1.05rem;
+  --fs-lg: 1.15rem;
+  --fs-xl: 1.65rem;
+  --fs-xxl: clamp(2rem, 3.4vw, 2.8rem);
+
+  --s-2: 0.25rem;
+  --s-3: 0.5rem;
+  --s-4: 0.75rem;
+  --s-5: 1rem;
+
+  --r: 16px;
+  --r-lg: 22px;
+  --b-inp: 1px;
+  --b-btn: 1px;
+
+  --container-max: 1120px;
+  --outer-pad: clamp(1rem, 4vw, 2.25rem);
+  --h-btn: 48px;
+  --canvas-h: 320px;
+
+  --bg-0: #0b1424;
+  --bg-1: #0f1e35;
+  --bg-2: #0a1a2f;
+
+  --text: #e7eefc;
+  --muted: #a9b7d3;
+  --border: rgba(210, 225, 255, 0.14);
+
+  --accent: #6fb2ff;
+  --accent-2: #4d86ff;
+  --accent-rgb: 111, 178, 255;
+
+  --amber-rgb: 251, 191, 36;
+  --cyan-rgb: 34, 211, 238;
+  --magenta-rgb: 255, 117, 195;
+  --violet-rgb: 158, 123, 255;
+
+  --shadow: 0 12px 36px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}

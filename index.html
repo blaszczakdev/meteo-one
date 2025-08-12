@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Meteo One</title>
+    <link
+      id="favicon"
+      rel="icon"
+      type="image/png"
+      href="https://cdn.weatherapi.com/weather/128x128/day/113.png"
+    />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/variables.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/tablet.css" media="(min-width: 768px)" />
+    <link rel="stylesheet" href="/css/laptop.css" media="(min-width: 1024px)" />
+    <link
+      rel="stylesheet"
+      href="/css/desktop.css"
+      media="(min-width: 1280px)"
+    />
+  </head>
+  <body>
+    <main>
+      <section class="weather-info" id="mainContainer">
+        <div id="weatherSearchView" class="weather-info__search-view">
+          <label class="weather-info__search__label" for="searchInput"
+            >Search for a city:</label
+          >
+
+          <div class="searchbar">
+            <input
+              id="searchInput"
+              type="text"
+              placeholder="e.g., London or 51.5,-0.1"
+              autocomplete="off"
+            />
+            <button id="searchButton" type="button" class="btn searchbar__btn">
+              <span
+                id="searchButtonSpinner"
+                class="btn__spinner"
+                aria-hidden="true"
+                hidden
+              ></span>
+              <span id="searchButtonLabel" class="btn__label">Search</span>
+            </button>
+          </div>
+
+          <div class="quick" id="quickRow">
+            <button
+              id="chipUseLocation"
+              type="button"
+              class="chip chip--primary"
+            >
+              Use my location
+            </button>
+            <button id="lastChip" type="button" class="chip" hidden></button>
+          </div>
+        </div>
+
+        <div id="weatherForecastView" class="forecast">
+          <header class="toolbar">
+            <button class="btn btn--ghost" id="returnToSearchBtn" type="button">
+              Back
+            </button>
+          </header>
+
+          <div class="forecast__head">
+            <h1 id="weatherCity"></h1>
+          </div>
+
+          <section class="card card--hero">
+            <div class="hero">
+              <div class="hero__media">
+                <img id="weatherIcon" alt="" />
+              </div>
+              <div class="hero__main">
+                <p class="muted kpi-label">Current temperature</p>
+                <div class="temp-display" aria-live="polite">
+                  <span
+                    id="weatherCurrentTempValue"
+                    class="temp-display__value"
+                  ></span>
+                  <span class="temp-display__unit">°C</span>
+                </div>
+                <p id="weatherCondition" class="muted"></p>
+              </div>
+            </div>
+
+            <div class="hero__metrics">
+              <div class="metric">
+                <span>Max</span><strong id="weatherMaxTemp"></strong>
+              </div>
+              <div class="metric">
+                <span>Min</span><strong id="weatherMinTemp"></strong>
+              </div>
+              <div class="metric">
+                <span>Feels</span><strong id="weatherFeelsLike"></strong>
+              </div>
+              <div class="metric">
+                <span>UV</span><strong id="weatherUV"></strong>
+              </div>
+            </div>
+          </section>
+
+          <section class="grid grid--extras">
+            <div class="card" id="astroCard">
+              <h3>Sun &amp; Moon</h3>
+              <ul class="list">
+                <li id="sunrise"></li>
+                <li id="sunset"></li>
+                <li id="moonPhase"></li>
+              </ul>
+            </div>
+            <div class="card" id="aqiCard">
+              <h3>Air Quality</h3>
+              <p id="aqiIndex"></p>
+            </div>
+          </section>
+
+          <section class="card card--charts">
+            <input type="radio" id="tab-temp" name="chart-tab" checked />
+            <input type="radio" id="tab-uv" name="chart-tab" />
+            <div class="tabs">
+              <label for="tab-temp">Temperature</label>
+              <label for="tab-uv">UV index</label>
+            </div>
+            <div class="charts">
+              <canvas id="tempChart" class="chart chart--temp"></canvas>
+              <canvas id="uvChart" class="chart chart--uv"></canvas>
+            </div>
+          </section>
+
+          <footer class="powered">
+            Powered by
+            <a href="https://www.weatherapi.com/" rel="noopener noreferrer"
+              >WeatherAPI.com</a
+            >
+          </footer>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>
