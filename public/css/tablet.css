@@ -26,6 +26,10 @@
   gap: 1rem;
 }
 
+.metric {
+  aspect-ratio: auto;
+}
+
 .grid--extras {
   grid-template-columns: 1fr 1fr;
 }
