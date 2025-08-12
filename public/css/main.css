@@ -28,7 +28,6 @@ html {
 body {
   line-height: 1.5;
 }
-
 html,
 body {
   height: 100%;
@@ -65,7 +64,6 @@ main {
   padding-left: calc(var(--outer-pad) + env(safe-area-inset-left));
   padding-right: calc(var(--outer-pad) + env(safe-area-inset-right));
 }
-
 .weather-info {
   width: 100%;
   max-width: var(--container-max);
@@ -81,8 +79,6 @@ main {
   padding: clamp(1rem, 3.5vw, 2rem);
   transition: opacity 0.4s ease, transform 0.28s ease;
 }
-
-/* SEARCH */
 .weather-info__search-view {
   display: flex;
   flex-direction: column;
@@ -122,7 +118,6 @@ main {
 #searchInput:active {
   transform: translateY(1px);
 }
-
 .btn {
   height: var(--h-btn);
   border-radius: 999px;
@@ -158,17 +153,11 @@ main {
   border-top-color: #071427;
   animation: spin 0.75s linear infinite;
 }
-@media (prefers-reduced-motion: reduce) {
-  .btn__spinner {
-    animation: none;
-  }
-}
 @keyframes spin {
   to {
     transform: rotate(360deg);
   }
 }
-
 .quick {
   display: flex;
   justify-content: center;
@@ -205,8 +194,6 @@ main {
   color: #071427;
   border-color: transparent;
 }
-
-/* FORECAST */
 .forecast {
   display: none;
   flex-direction: column;
@@ -214,7 +201,6 @@ main {
 .forecast > * + * {
   margin-top: clamp(16px, 3vw, 28px);
 }
-
 .toolbar {
   display: flex;
   justify-content: center;
@@ -229,7 +215,6 @@ main {
   color: var(--text);
   border: 1px solid var(--border);
 }
-
 .forecast__head {
   display: flex;
   align-items: center;
@@ -239,9 +224,18 @@ main {
 #weatherCity {
   margin: 0;
   font-size: var(--fs-xxl);
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.96),
+    rgba(255, 255, 255, 0.82)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
 }
-
-/* HERO */
 .card {
   border: 1px solid var(--border);
   background: linear-gradient(
@@ -256,14 +250,14 @@ main {
   margin: 0 0 0.75rem;
   font-size: var(--fs-lg);
 }
-
 .card--hero {
   display: grid;
   gap: clamp(14px, 2.4vw, 22px);
 }
 .hero {
+  --icon-w: clamp(88px, 18vw, 132px);
   display: grid;
-  gap: clamp(14px, 3vw, 24px);
+  gap: clamp(10px, 2vw, 18px);
   justify-items: center;
   align-items: center;
 }
@@ -272,32 +266,25 @@ main {
   place-items: center;
 }
 #weatherIcon {
-  width: clamp(96px, 18vw, 144px);
-  height: clamp(96px, 18vw, 144px);
+  width: var(--icon-w);
+  height: var(--icon-w);
   object-fit: contain;
 }
-
-.hero__main {
-  text-align: center;
-}
-
 .kpi-label {
-  margin: 0.2rem 0 0.4rem;
+  margin: 0 0 0.25rem;
+  color: var(--muted);
+  font-size: var(--fs-md);
 }
-
 .temp-display {
   display: inline-flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 0.15em;
+  align-items: flex-end;
+  gap: 0.4rem;
   line-height: 1;
   white-space: nowrap;
-  font-size: clamp(3.6rem, 12vw, 6rem);
+  font-size: clamp(3.6rem, 12vw, 6.2rem);
 }
-
 .temp-display__value {
-  font-size: 1em;
-  font-weight: 800;
+  font: 800 1em/1 var(--font);
   letter-spacing: -0.02em;
   background: linear-gradient(
     180deg,
@@ -308,16 +295,11 @@ main {
   background-clip: text;
   color: transparent;
 }
-
 .temp-display__unit {
-  font-size: 1em;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  opacity: 0.9;
-  line-height: 1;
+  font: 400 1em/1 var(--font);
+  color: rgba(255, 255, 255, 0.88);
   transform: translateY(-0.02em);
 }
-
 .muted {
   color: var(--muted);
   font-size: var(--fs-md);
@@ -340,14 +322,13 @@ main {
 }
 .metric span {
   display: block;
-  color: var(--muted);
   font-size: var(--fs-sm);
+  color: rgba(var(--accent-rgb), 0.9);
 }
 .metric strong {
   font-size: var(--fs-lg);
+  color: var(--text);
 }
-
-/* EXTRAS */
 .grid--extras {
   display: grid;
   gap: clamp(12px, 2.4vw, 24px);
@@ -357,8 +338,50 @@ main {
   padding: 0;
   list-style: none;
 }
-
-/* CHARTS */
+#astroCard {
+  border-color: rgba(59, 130, 246, 0.25);
+  background: linear-gradient(
+      180deg,
+      rgba(59, 130, 246, 0.12),
+      rgba(59, 130, 246, 0.08)
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.07),
+      rgba(255, 255, 255, 0.05)
+    );
+}
+#aqiCard {
+  border-color: rgba(52, 211, 153, 0.25);
+  background: linear-gradient(
+      180deg,
+      rgba(52, 211, 153, 0.12),
+      rgba(52, 211, 153, 0.08)
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.07),
+      rgba(255, 255, 255, 0.05)
+    );
+}
+#astroCard h3 {
+  color: rgba(59, 130, 246, 0.95);
+  text-shadow: 0 0 1px rgba(59, 130, 246, 0.15);
+}
+#astroCard .list li,
+#astroCard p {
+  color: var(--text);
+  opacity: 0.92;
+}
+#aqiCard h3 {
+  color: rgba(52, 211, 153, 0.95);
+  text-shadow: 0 0 1px rgba(52, 211, 153, 0.15);
+}
+#aqiCard .list li,
+#aqiCard p {
+  color: var(--text);
+  opacity: 0.92;
+}
 .card--charts {
   display: flex;
   flex-direction: column;
@@ -413,8 +436,6 @@ main {
 #tab-uv:checked ~ .charts .chart--uv {
   display: block !important;
 }
-
-/* FOOTER + ERRORS */
 .powered {
   font-size: 0.75rem;
   color: var(--muted);
@@ -432,8 +453,6 @@ main {
   color: #fecaca;
   font-size: var(--fs-sm);
 }
-
-/* TRANSITIONS */
 #mainContainer {
   will-change: opacity, transform;
 }
