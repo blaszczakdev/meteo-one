@@ -1,3 +1,5 @@
+**Live demo:** https://meteo-one-blaszczakdevs-projects.vercel.app/
+
 # Meteo One (Vanilla JS)
 
 Meteo One is a modern, mobile-first weather application built with plain **HTML/CSS/JS**.  
