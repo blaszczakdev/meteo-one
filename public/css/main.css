@@ -286,6 +286,14 @@ main {
   color: rgba(231, 238, 252, 0.92);
 }
 
+.grid--extras > .card:nth-child(1) h3 {
+  color: rgba(var(--cyan-rgb), 0.95);
+}
+
+.grid--extras > .card:nth-child(2) h3 {
+  color: rgba(var(--violet-rgb), 0.95);
+}
+
 .card--hero {
   display: grid;
   gap: clamp(14px, 2.4vw, 22px);
